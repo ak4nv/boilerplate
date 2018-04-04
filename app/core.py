@@ -1,4 +1,4 @@
-from flask import Flask, abort, request, session
+from flask import Flask, abort, jsonify, request, session
 
 import os
 
@@ -26,9 +26,14 @@ def create_app():
     app.session_interface = MySessionInterface()
 
     @app.before_request
+    def early_response():
+        if request.method == 'OPTIONS':
+            return jsonify(test='passed')
+
+    @app.before_request
     def check_authorization():
         bp = request.blueprint or request.endpoint
-        if bp in ('main', 'auth', 'static') or request.method == 'OPTIONS':
+        if bp in ('main', 'auth', 'static'):
             return
         if session.user is None:
             abort(401)

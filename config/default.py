@@ -2,7 +2,7 @@ from datetime import timedelta
 
 # How to generate SECRET_KEY
 # python3 -c 'import os; print(os.urandom(24))'
-SECRET_KEY = b''
+SECRET_KEY = b'\n\xc6\x9a\xe9\xbf\x08Y\x99\x1b\xf6l\x8a\xdfZ\x9f9\xef\x01&\x0e\x1a&\xc1Q'
 APP_NAME = 'Web App Boilerplate'
 PERMANENT_SESSION_LIFETIME = timedelta(hours=8)
 ADMINS = ('admin@example.com',)
