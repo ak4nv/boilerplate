@@ -20,7 +20,7 @@ Install
 
   git clone git@github.com:ak04nv/boilerplate.git
   cd boilerplate
-  virtualenv -p python3 --prompt=(boilerplate) .env
+  virtualenv -p python3 --prompt="(boilerplate) " .env
   . .env/bin/activate
   pip install -r requirements.txt
   export FLASK_APP=wsgi.py

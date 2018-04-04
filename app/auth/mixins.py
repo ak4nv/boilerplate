@@ -4,7 +4,7 @@ from playhouse.sqlite_ext import JSONField
 
 try:
     from playhouse.postgres_ext import BinaryJSONField
-except ModuleNotFoundError:
+except ImportError:
     # Depends on psycopg2 package
     BinaryJSONField = lambda null: None
 
