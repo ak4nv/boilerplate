@@ -2,6 +2,7 @@ const axios = require('axios')
 const NotificationStore = require('./notifications/store.js')
 
 // Add header for all queries
+axios.defaults.baseURL = Session.baseURL;
 axios.defaults.withCredentials = true;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.headers.post['Content-Type'] = 'text/plain';

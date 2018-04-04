@@ -1415,6 +1415,7 @@ var axios = __webpack_require__(16);
 var NotificationStore = __webpack_require__(6);
 
 // Add header for all queries
+axios.defaults.baseURL = Session.baseURL;
 axios.defaults.withCredentials = true;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.headers.post['Content-Type'] = 'text/plain';

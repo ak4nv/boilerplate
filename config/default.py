@@ -13,6 +13,9 @@ JSON_AS_ASCII = False
 
 DATABASE_URL = 'sqliteext:///db_test.sqlite'
 
+# URL prefix for ajax requests
+# https://github.com/axios/axios#request-config
+BASE_URL = ''
 # Default settings for send emails of exceptions
 # For fast sending use celery or local smtp-proxy
 # https://github.com/ak04nv/smtp-proxy
