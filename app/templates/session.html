@@ -1,0 +1,12 @@
+<script>
+  const Session = {{ session|tojson|safe }};
+  Session.user = {%- if session.user %}{{ session.user.as_dict|tojson|safe }}{% else %}null{% endif %};
+  Session.app_name = '{{ config.APP_NAME }}';
+  Session.update = function(data) {
+    this.user = data.user;
+    this.data = data.data;
+  };
+  Session.clear = function() {
+    this.user = null;
+  };
+</script>

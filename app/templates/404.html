@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Page not Found{% endblock %}
+{%- block body %}
+  <h2>Error 404 <small>{{ name }}</small></h2>
+  <div class="bs-callout bs-callout-info">
+    <h4>Page not found (404)</h4>
+    <p>There is no page by this url you requested.</p>
+  </div>
+{%- endblock %}

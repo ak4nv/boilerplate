@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Internal Server Error{% endblock %}
+{%- block body %}
+  <h2>Internal Server Error (500)<small>{{ name }}</small></h2>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Damn! It seems there is a some issue here... </h4>
+    <p>Unfortunately your request has got an error. We've got a message about this issue and and started to fix already. Please, just take a cookies while we are solving this.</p>
+  </div>
+{%- endblock %}
