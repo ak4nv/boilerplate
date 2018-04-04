@@ -1,7 +1,7 @@
 <template>
   <header class="navbar bg-secondary">
     <section class="navbar-section">
-      <a href="/" class="navbar-brand mr-2" v-text="app_name" />
+      <a :href="url" class="navbar-brand mr-2" v-text="app_name" />
     </section>
     <section class="navbar-section">
       <div class="btn btn-link">Welcome, {{user.firstname}}</div>
@@ -14,7 +14,8 @@
     data () {
       return {
         app_name: Session.app_name,
-        user: Session.user
+        user: Session.user,
+        url: Session.baseURL
       }
     },
     methods: {

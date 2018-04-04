@@ -2464,7 +2464,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       app_name: Session.app_name,
-      user: Session.user
+      user: Session.user,
+      url: Session.baseURL
     };
   },
 
@@ -2723,7 +2724,7 @@ exports = module.exports = __webpack_require__(2)(true);
 
 
 // module
-exports.push([module.i, "\nheader[data-v-a75313e8] {\n  height: 3rem;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n", "", {"version":3,"sources":["/home/ak04nv/projects/web-app-boilerplate/frontend/src/components/header.vue?8c431b5c"],"names":[],"mappings":";AA8BA;EACA,aAAA;EACA,mBAAA;EACA,oBAAA;CACA","file":"header.vue","sourcesContent":["<template>\n  <header class=\"navbar bg-secondary\">\n    <section class=\"navbar-section\">\n      <a href=\"/\" class=\"navbar-brand mr-2\" v-text=\"app_name\" />\n    </section>\n    <section class=\"navbar-section\">\n      <div class=\"btn btn-link\">Welcome, {{user.firstname}}</div>\n      <div class=\"btn btn-primary btn-sm\" @click=\"logout\">Logout</div>\n    </section>\n  </header>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        app_name: Session.app_name,\n        user: Session.user\n      }\n    },\n    methods: {\n      logout () {\n        this.$http.post('/auth/logout').then(resp => {\n          Session.clear()\n          this.$router.push({name: 'login'})\n        })\n      }\n    }\n  }\n</script>\n<style scoped>\n  header {\n    height: 3rem;\n    padding-left: 1rem;\n    padding-right: 1rem;\n  }\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\nheader[data-v-a75313e8] {\n  height: 3rem;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n", "", {"version":3,"sources":["/home/ak04nv/projects/web-app-boilerplate/frontend/src/components/header.vue?4e8159f6"],"names":[],"mappings":";AA+BA;EACA,aAAA;EACA,mBAAA;EACA,oBAAA;CACA","file":"header.vue","sourcesContent":["<template>\n  <header class=\"navbar bg-secondary\">\n    <section class=\"navbar-section\">\n      <a :href=\"url\" class=\"navbar-brand mr-2\" v-text=\"app_name\" />\n    </section>\n    <section class=\"navbar-section\">\n      <div class=\"btn btn-link\">Welcome, {{user.firstname}}</div>\n      <div class=\"btn btn-primary btn-sm\" @click=\"logout\">Logout</div>\n    </section>\n  </header>\n</template>\n<script>\n  export default {\n    data () {\n      return {\n        app_name: Session.app_name,\n        user: Session.user,\n        url: Session.baseURL\n      }\n    },\n    methods: {\n      logout () {\n        this.$http.post('/auth/logout').then(resp => {\n          Session.clear()\n          this.$router.push({name: 'login'})\n        })\n      }\n    }\n  }\n</script>\n<style scoped>\n  header {\n    height: 3rem;\n    padding-left: 1rem;\n    padding-right: 1rem;\n  }\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -3249,7 +3250,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('a', {
     staticClass: "navbar-brand mr-2",
     attrs: {
-      "href": "/"
+      "href": _vm.url
     },
     domProps: {
       "textContent": _vm._s(_vm.app_name)
