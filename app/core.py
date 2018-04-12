@@ -1,4 +1,4 @@
-from flask import Flask, abort, jsonify, request, session
+from flask import Flask, Response, abort, jsonify, request, session
 
 import os
 
@@ -28,7 +28,8 @@ def create_app():
     @app.before_request
     def early_response():
         if request.method == 'OPTIONS':
-            return jsonify(test='passed')
+            # Early response for preflight request
+            return Response('Test passed')
 
     @app.before_request
     def check_authorization():
