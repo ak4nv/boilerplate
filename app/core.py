@@ -28,7 +28,7 @@ def create_app():
             # Early response for preflight request
             resp = Response('Test passed')
             add_xhr_headers(resp)
-            return
+            return resp
 
     @app.before_request
     def check_authorization():
