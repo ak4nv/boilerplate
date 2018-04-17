@@ -19,6 +19,7 @@ def add_xhr_headers(resp):
         # Enable CORS for `api` blueprint
         resp.headers.add('Access-Control-Allow-Origin',
                          request.headers.get('Origin', '*'))
+    return resp
 
 
 def handle_error(e):
